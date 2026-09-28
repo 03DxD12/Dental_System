@@ -83,9 +83,10 @@ function goBack() {
   });
 })();
 
-document
-  .getElementById("loginButton")
-  .addEventListener("click", function (event) {
+const loginButton = document.getElementById("loginButton");
+
+if (loginButton) {
+  loginButton.addEventListener("click", function (event) {
     event.preventDefault(); // Prevent default form submission
 
     let btn = this;
@@ -109,21 +110,29 @@ document
       form.submit();
     }, 1000);
   });
+}
 
 function updateCharCount() {
   const input = document.getElementById("name");
+  const output = document.getElementById("charCount");
+  if (!input || !output) {
+    return;
+  }
   const count = input.value.length;
-  document.getElementById("charCount").textContent = count;
+  output.textContent = count;
 }
-
-// Optional: initialize on page load if input has value
-window.onload = updateCharCount;
 
 function updateCharTextCount() {
   const input = document.getElementById("medicalRecord");
+  const output = document.getElementById("charTextAreaCount");
+  if (!input || !output) {
+    return;
+  }
   const count = input.value.length;
-  document.getElementById("charTextAreaCount").textContent = count;
+  output.textContent = count;
 }
 
-// Optional: initialize on page load if input has value
-window.onload = updateCharTextCount;
+window.addEventListener("DOMContentLoaded", () => {
+  updateCharCount();
+  updateCharTextCount();
+});

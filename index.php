@@ -170,17 +170,17 @@
   </main>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    window.onload = function () {
+    window.addEventListener("load", function () {
       Particles.init({
         selector: ".background",
-        maxParticles: 80,
+        maxParticles: 45,
         connectParticles: true,
         color: "#1fa6dc",
         responsive: [
           {
             breakpoint: 768,
             options: {
-              maxParticles: 80,
+              maxParticles: 35,
               color: "#1fa6dc",
               connectParticles: true,
             },
@@ -188,22 +188,22 @@
           {
             breakpoint: 425,
             options: {
-              maxParticles: 80,
+              maxParticles: 24,
               color: "#1fa6dc",
-              connectParticles: true,
+              connectParticles: false,
             },
           },
           {
             breakpoint: 320,
             options: {
-              maxParticles: 80,
+              maxParticles: 16,
               color: "#1fa6dc",
-              connectParticles: true,
+              connectParticles: false,
             },
           },
         ],
       });
-    };
+    });
   </script>
     <script>
     ScrollReveal().reveal('.background', { reset: true });

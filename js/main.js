@@ -1,8 +1,21 @@
 const appointmentsByDay_options = {
   series: [],
   chart: {
-    height: 250,
+    height: 280,
     type: "area",
+    animations: {
+      enabled: true,
+      easing: "easeinout",
+      speed: 550,
+      animateGradually: {
+        enabled: true,
+        delay: 80,
+      },
+      dynamicAnimation: {
+        enabled: true,
+        speed: 350,
+      },
+    },
     distributed: true,
     toolbar: {
       show: true,
@@ -26,6 +39,16 @@ const appointmentsByDay_options = {
   },
   stroke: {
     curve: "smooth",
+    width: 3,
+  },
+  fill: {
+    type: "gradient",
+    gradient: {
+      shadeIntensity: 0.3,
+      opacityFrom: 0.35,
+      opacityTo: 0.05,
+      stops: [0, 90, 100],
+    },
   },
   xaxis: {
     type: "datetime", // Use datetime format for the x-axis
@@ -36,6 +59,35 @@ const appointmentsByDay_options = {
       format: "MMMM yyyy", // Format the tooltip for the date
     },
   },
+  responsive: [
+    {
+      breakpoint: 768,
+      options: {
+        chart: {
+          height: 260,
+          toolbar: {
+            show: false,
+          },
+        },
+        stroke: {
+          width: 2,
+        },
+      },
+    },
+    {
+      breakpoint: 480,
+      options: {
+        chart: {
+          height: 230,
+        },
+        xaxis: {
+          labels: {
+            show: false,
+          },
+        },
+      },
+    },
+  ],
 };
 
 // Fetch data from the backend and update the chart
@@ -65,6 +117,11 @@ const appointmentStatusPie_options = {
     chart: {
       height: 300,
       type: "donut",
+      animations: {
+        enabled: true,
+        easing: "easeinout",
+        speed: 550,
+      },
     },
     labels: [],  // This will be populated with appointment statuses
     tooltip: {
@@ -83,7 +140,7 @@ const appointmentStatusPie_options = {
         breakpoint: 480,
         options: {
           chart: {
-            width: 200,
+            height: 250,
           },
           legend: {
             position: "bottom",

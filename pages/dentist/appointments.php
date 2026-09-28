@@ -596,8 +596,13 @@ checkRole(['Dentist']);
                             html: true  // Important for using <br> and <strong>
                         });
                     },
-                    height: 600,
-                    aspectRatio: 1.8
+                    height: 'auto',
+                    contentHeight: 560,
+                    aspectRatio: window.innerWidth < 768 ? 1.15 : 1.8,
+                    windowResize: function () {
+                        calendar.setOption('aspectRatio', window.innerWidth < 768 ? 1.15 : 1.8);
+                        calendar.updateSize();
+                    }
                 });
 
 

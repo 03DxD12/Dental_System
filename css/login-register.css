@@ -13,24 +13,25 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  padding: 1.5rem;
 }
 
 .login-box,
 .register-box {
-  width: 360px;
+  width: min(100%, 380px);
 }
 
 @media (max-width: 576px) {  /* This is assuming 576px is your "sm" breakpoint */
   .login-box,
   .register-box {
-    width: 90%;
+    width: 100%;
     margin-top: 0.5rem;
   }
 }
 
 .login-card-body,
 .register-card-body {
-  padding: 20px;
+  padding: clamp(1rem, 4vw, 1.5rem);
   border-top: 0;
 }
 
@@ -46,11 +47,13 @@ button[type="submit"] {
   background-color: #1fa6dc;
   border: 1px solid #1fa6dc;
   color: #fff;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s cubic-bezier(0.22, 1, 0.36, 1);
 }
 button[type="submit"]:hover {
   background-color: #fff !important;
   color: #1fa6dc !important;
   border: 1px solid #1fa6dc !important;
+  transform: translateY(-1px);
 }
 
 button[type="submit"]:focus,
@@ -89,5 +92,17 @@ button[type="submit"]:active {
   transition: all 0.5s;
 }
 .form-control {
-  padding: 1rem 0.75rem;
+  min-height: 3rem;
+  padding: 0.875rem 0.75rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  button[type="submit"],
+  .link-dark {
+    transition-duration: 0.01ms !important;
+  }
+
+  button[type="submit"]:hover {
+    transform: none;
+  }
 }

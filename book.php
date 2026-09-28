@@ -79,7 +79,7 @@ include 'conn.php';
         <div class="container my-5 animate__animated animate__fadeIn">
             <!-- Outer Row -->
             <div class="row d-flex justify-content-center gap-3">
-                <div class="col animate__animated animate__fadeInLeft animate__faster">
+                <div class="col-12 col-xl-6 animate__animated animate__fadeInLeft animate__faster">
                     <div class="card o-hidden border-0 shadow-lg">
                         <div class="card-body p-0">
                             <!-- Nested Row within Card Body -->
@@ -93,7 +93,7 @@ include 'conn.php';
                         </div>
                     </div>
                 </div>
-                <div class="col animate__animated animate__fadeInRight animate__faster">
+                <div class="col-12 col-xl-5 animate__animated animate__fadeInRight animate__faster">
                     <div class="card o-hidden border-0 shadow-lg">
                         <div class="card-body p-0">
                             <!-- Nested Row within Card Body -->
@@ -324,9 +324,12 @@ include 'conn.php';
         document.querySelector('[name="contact"]').addEventListener('input', function (e) {
             this.value = this.value.replace(/[^0-9]/g, '');
         });
-        document.querySelector('[name="members"]').addEventListener('input', function (e) {
-            this.value = this.value.replace(/[^0-9]/g, '');
-        });
+        const membersInput = document.querySelector('[name="members"]');
+        if (membersInput) {
+            membersInput.addEventListener('input', function (e) {
+                this.value = this.value.replace(/[^0-9]/g, '');
+            });
+        }
     </script>
     <script>
         const today = new Date().toISOString().split('T')[0];
@@ -467,8 +470,13 @@ include 'conn.php';
                         html: true  // Important for using <br> and <strong>
                     });
                 },
-                height: 600,
-                aspectRatio: 1.8
+                height: 'auto',
+                contentHeight: 560,
+                aspectRatio: window.innerWidth < 768 ? 1.15 : 1.8,
+                windowResize: function () {
+                    calendar.setOption('aspectRatio', window.innerWidth < 768 ? 1.15 : 1.8);
+                    calendar.updateSize();
+                }
             });
 
 
@@ -476,17 +484,17 @@ include 'conn.php';
         });
     </script>
     <script>
-        window.onload = function () {
+        window.addEventListener("load", function () {
             Particles.init({
                 selector: ".background",
-                maxParticles: 500,
+                maxParticles: 70,
                 connectParticles: false,
                 color: "#ffffff",
                 responsive: [
                     {
                         breakpoint: 768,
                         options: {
-                            maxParticles: 500,
+                            maxParticles: 45,
                             color: "#1fa6dc",
                             connectParticles: false,
                         },
@@ -494,7 +502,7 @@ include 'conn.php';
                     {
                         breakpoint: 425,
                         options: {
-                            maxParticles: 500,
+                            maxParticles: 28,
                             color: "#ffffff",
                             connectParticles: false,
                         },
@@ -502,14 +510,14 @@ include 'conn.php';
                     {
                         breakpoint: 320,
                         options: {
-                            maxParticles: 500,
+                            maxParticles: 18,
                             color: "#ffffff",
                             connectParticles: false,
                         },
                     },
                 ],
             });
-        };
+        });
     </script>
 </body>
 

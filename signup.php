@@ -200,17 +200,17 @@
   <!--end::Third Party Plugin(OverlayScrollbars)-->
 
         <script>
-    window.onload = function () {
+    window.addEventListener("load", function () {
       Particles.init({
         selector: ".background",
-        maxParticles: 500,
+        maxParticles: 70,
         connectParticles: false,
         color: "#ffffff",
         responsive: [
           {
             breakpoint: 768,
             options: {
-              maxParticles: 500,
+              maxParticles: 45,
               color: "#1fa6dc",
               connectParticles: false,
             },
@@ -218,7 +218,7 @@
           {
             breakpoint: 425,
             options: {
-              maxParticles: 500,
+              maxParticles: 28,
               color: "#ffffff",
               connectParticles: false,
             },
@@ -226,14 +226,14 @@
           {
             breakpoint: 320,
             options: {
-              maxParticles: 500,
+              maxParticles: 18,
               color: "#ffffff",
               connectParticles: false,
             },
           },
         ],
       });
-    };
+    });
   </script>
 </body>
 
