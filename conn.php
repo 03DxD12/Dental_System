@@ -1,11 +1,12 @@
 <?php
-$host = "127.0.0.1";    // Database host (e.g., 127.0.0.1 or your server IP)
-$username = "root";         // Database username
-$password = "";             // Database password
-$dbname = "dental_booking_db"; // Database name
+$host = getenv("DB_HOST") ?: "127.0.0.1";
+$username = getenv("DB_USER") ?: "root";
+$password = getenv("DB_PASS") !== false ? getenv("DB_PASS") : "";
+$dbname = getenv("DB_NAME") ?: "dental_booking_db";
+$port = (int) (getenv("DB_PORT") ?: 3306);
 
 // Create connection
-$conn = new mysqli($host, $username, $password, $dbname);
+$conn = new mysqli($host, $username, $password, $dbname, $port);
 
 // Check connection
 if ($conn->connect_error) {

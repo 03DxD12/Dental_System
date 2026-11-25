@@ -1,0 +1,13 @@
+# Environment & secrets
+.env
+.env.*
+
+# Logs & OS files
+*.log
+.DS_Store
+Thumbs.db
+
+# IDE / Editor / Tooling
+.vscode/
+.idea/
+.qodo/

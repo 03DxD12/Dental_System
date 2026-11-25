@@ -55,24 +55,24 @@ canvas {
   border: 0;
 }
 
-.btn-warning:active .btn-warning:focus {
+.btn-warning:active,
+.btn-warning:focus-visible {
   background-color: #f6c23e !important;
   color: rgb(255, 255, 255);
-  box-shadow: none;
   border: 0;
 }
 
-.btn-success:active .btn-success:focus {
+.btn-success:active,
+.btn-success:focus-visible {
   background-color: #1cc88a !important;
   color: rgb(255, 255, 255);
-  box-shadow: none;
   border: 0;
 }
 
-.btn-danger:active .btn-danger:focus {
+.btn-danger:active,
+.btn-danger:focus-visible {
   background-color: #dc3545 !important;
   color: rgb(255, 255, 255);
-  box-shadow: none;
   border: 0;
 }
 
@@ -83,11 +83,18 @@ canvas {
   box-shadow: var(--surface-shadow) !important;
 }
 
-.btn-book:active .btn-book:focus {
+.btn-book:active,
+.btn-book:focus-visible {
   background-color: #1fa6dc !important;
   color: rgb(255, 255, 255);
-  box-shadow: none;
   border: 0;
+}
+
+.btn:focus-visible,
+.page-link:focus-visible,
+.fc .fc-button:focus-visible {
+  outline: 2px solid var(--brand-blue-dark);
+  outline-offset: 2px;
 }
 
 .btn-link.focus,
@@ -248,23 +255,34 @@ textarea::-webkit-scrollbar-thumb {
   pointer-events: none; /* prevents clicking/focusing */
 }
 
-.form-control input[type="text"]:focus {
-  box-shadow: none;
+.form-control:focus,
+.form-select:focus {
   border: 1px solid #1fa6dc;
+  box-shadow: 0 0 0 0.2rem rgba(31, 166, 220, 0.22);
 }
 
-.form-control .form-select:focus {
-  box-shadow: none;
-  border: 1px solid #1fa6dc;
+h1,
+h2,
+h3,
+.h1,
+.h2,
+.h3 {
+  text-wrap: balance;
 }
 
-.form-control input[type="password"]:focus {
-  box-shadow: none;
-  border: 1px solid #1fa6dc;
+.table td,
+.table th,
+.badge,
+.h5,
+.fc-daygrid-day-number {
+  font-variant-numeric: tabular-nums;
 }
-.form-control:focus {
-  box-shadow: none;
-  border: 1px solid #1fa6dc;
+
+.btn,
+.pagination .page-link,
+.fc .fc-button {
+  min-width: 2.5rem;
+  min-height: 2.5rem;
 }
 
 .card {

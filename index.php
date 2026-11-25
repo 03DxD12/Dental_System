@@ -60,7 +60,7 @@
     <section class="container col-xxl-8 px-4 py-5 animate__animated animate__fadeIn animate__faster">
       <div class="row flex-lg-row-reverse g-5 justify-content-center align-items-center">
         <div class="col-10 col-sm-8 col-lg-6 order-md-1 order-2 animate__animated animate__backInRight animate__fast">
-          <img src="img/image-1.png" class="d-flex mx-lg-auto img-fluid" width="450" loading="lazy" />
+          <img src="img/image-1.png" alt="Dentist caring for a patient in the clinic" class="d-flex mx-lg-auto img-fluid" width="450" loading="lazy" />
         </div>
         <div class="col-lg-6 order-md-2 order-1 animate__animated animate__backInLeft animate__fast">
           <p class="display-4 lh-1 text-primary text-center text-lg-start">
@@ -69,7 +69,7 @@
           </p>
           <div class="d-flex justify-content-center justify-content-md-center justify-content-lg-start">
             <a href="#about" class="btn btn-blue text-light btn-lg rounded-5 px-4 py-2 fw-bold">
-              About Us <i class="bi bi-arrow-down"></i>
+              About Us <i class="bi bi-arrow-down" aria-hidden="true"></i>
             </a>
           </div>
         </div>
@@ -79,7 +79,7 @@
       <div class="container py-5" id="about">
         <div class="row d-flex g-5 justify-content-center align-items-center py-3">
           <div class="col-10 col-sm-8 col-lg-6 order-md-1 order-2 animate__animated animate__fadeInLeft animate__faster">
-            <img src="img/image-2.png" class="d-block mx-lg-auto img-fluid" width="450" loading="lazy" />
+            <img src="img/image-2.png" alt="Dental clinic team and equipment" class="d-block mx-lg-auto img-fluid" width="450" loading="lazy" />
           </div>
           <div class="col-auto col-lg-6 order-md-2 order-1 animate__animated animate__fadeInRight animate__faster">
             <div class="row justify-content-center">
