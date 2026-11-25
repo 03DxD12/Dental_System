@@ -38,3 +38,4 @@ A full-stack **Dental Clinic Appointment & Management System** built with PHP, M
 ## Hosting Note for Portfolio
 
 Because this application uses **PHP** and **MySQL**, it requires a server with PHP + MySQL support (such as **Railway**, **Render**, **InfinityFree**, or a VPS). GitHub Pages only serves static HTML/CSS/JS files and cannot execute PHP or connect to MySQL.
+
